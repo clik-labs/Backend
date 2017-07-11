@@ -27,18 +27,7 @@ var CardSchema = mongoose.Schema({
     token: {type: String},
     like: {type: Number},
     date: {type: String},
-    token: {type: String},
 });
-
-var sync_CardSchema = mongoose.Schema({
-    title: {type: String},
-    subtitle: {type: String},
-    token: {type: String},
-    summary: {type: String},
-    date: {type: String},
-    token: {type: String},
-});
-
 
 var UsersSchema = mongoose.Schema({
     email: {type: String},
@@ -46,11 +35,9 @@ var UsersSchema = mongoose.Schema({
     name: {type: String},
     token: {type: String},
     profile: {type: String},
-    profile_img: {type: String, default: "http://soylatte.kr:8899/img/default"},
+    profile_img: {type: String},
     facebook_id: {type: String},
     interest: {type: String},
-    sync: sync_CardSchema,
-    enable_sync: {type: Boolean},
     liked_card: [String],
     liked_editor: [String],
     like: {type: Number},
