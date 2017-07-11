@@ -1,7 +1,7 @@
 module.exports = auth;
 
 function auth(app, db, randomstring, port){
-    app.post('/auth/login', (req, res)=>{
+    app.post('/auth/local/login', (req, res)=>{
         var body = req.body;
         db.Users.findOne({
             email : body.email,
@@ -9,7 +9,7 @@ function auth(app, db, randomstring, port){
         }, (err, result)=>{
             if(err){
                 console.log('Login Error!')
-                res.status(500).send("DB Error")
+                res.status(403).send("DB Error")
                 throw err
             }
             else if(result){
@@ -18,20 +18,21 @@ function auth(app, db, randomstring, port){
             }
             else{
                 console.log('LOGIN FAILED')
-                res.status(404).send("NOT FOUND")
+                res.status(401).send("NOT FOUND")
             }
         })
     })
 
-    app.post('/auth/signup', (req, res)=>{
+    app.post('/auth/local/register', (req, res)=>{
+        var token = randomstring.generate(15)
         var body = req.body;
         var users = new db.Users({
             email : body.email,
             passwd : body.passwd,
             name : body.name,
-            token : randomstring.generate(15),
+            token : token,
             profile : "",
-            profile_img : 'http://soylatte.kr:'+port+'/img/'+token,
+            profile_img : 'http://soylatte.kr:'+port+'/img/'+token+'.jpg',
             facebook_id : "",
             interest : "",
             liked_card : [],
@@ -44,7 +45,7 @@ function auth(app, db, randomstring, port){
         }, (err, result)=>{
             if(err){
                 console.log("Signup Error!")
-                res.status(500).send("DB Error")
+                res.status(403).send("DB Error")
                 throw err
             }
             else if(result){
@@ -55,12 +56,12 @@ function auth(app, db, randomstring, port){
                 users.save((err)=>{
                     if(err){
                         console.log('Signup Error!')
-                        res.send(500).send('Signup Error')
+                        res.send(403).send('Signup Error')
                         throw err
                     }
                     else{
-                        console.log(body.name+"Signup Success")
-                        res.status(200).send(body.name+'Signup Success')
+                        console.log(body.name+" Signup Success")
+                        res.status(200)
                     }
                 })
 
@@ -68,4 +69,24 @@ function auth(app, db, randomstring, port){
         })
     })
 
+    app.post('/auth/local/authenticate', (req, res)=>{
+        var body = req.body;
+        db.Users.findOne({
+            token : body.token
+        },(err, result)=>{
+            if(err){
+                console.log('/auth/local/authenticate Error')
+                res.status(403).send('/auth/local/authenticate Error')
+                throw err
+            }
+            else if(result){
+                res.status(200).send(result)
+            }
+            else{
+                res.status(401).send('Save Fail')
+            }
+        })
+    })
+
 }
+
