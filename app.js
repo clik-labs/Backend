@@ -5,6 +5,8 @@ var app = express()
 var multer = require('multer')
 var randomstring = require('randomstring')
 var fcm = require('fcm-node')
+var passport = require('passport')
+var FacebookStrategy = require('passport-facebook')
 var db = require('./mongo/database')
 
 app.use(bodyParser.urlencoded({
@@ -25,6 +27,7 @@ app.use(function (req, res, next) {
 });
 
 require('./routes/auth')(app, db, randomstring, port)
+require('./routes/facebook')(app, db, passport, FacebookStrategy)
 
 app.listen(port, ()=>{
     console.log('Server Running At 8899 Port!')
