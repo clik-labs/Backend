@@ -4,6 +4,13 @@
 
 * 모든 요청은 귀찮으니 POST, FormUrlEncoded로 처리하겠습니다.
 
+# Contributor
+* UI/UX Designer [Luminon](https://github.com/Luminon)
+* Android Client Developer [Junseok Oh](https://github.com/kotohana5706)
+* Android Client Developer [Connotation](https://github.com/kkarrkid7)
+* Server Backend Developer [Seongwoon Cho](https://github.com/SunSet0418)
+* Server Backend Developer [Yeonjun Kim](https://github.com/iwin2471)
+
 ## Database Schema
 
 > UserSchema
