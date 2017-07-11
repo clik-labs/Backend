@@ -1,5 +1,5 @@
 module.exports = facebook;
-function facebook(app, db, passport, FacebookStrategy) {
+function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
     app.use(passport.initialize());
     app.use(passport.session());
 
@@ -30,7 +30,7 @@ function facebook(app, db, passport, FacebookStrategy) {
                     name : profile.displayName,
                     token : randomstring.generate(15),
                     profile : "",
-                    profile_img : 'http://soylatte.kr:'+port+'/img/'+token,
+                    profile_img : 'http://soylatte.kr:'+port+'/img/'+token+'.jpg',
                     facebook_id : profile.id,
                     interest : "",
                     liked_card : [],

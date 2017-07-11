@@ -27,7 +27,7 @@ app.use(function (req, res, next) {
 });
 
 require('./routes/auth')(app, db, randomstring, port)
-require('./routes/facebook')(app, db, passport, FacebookStrategy)
+require('./routes/facebook')(app, db, passport, FacebookStrategy, port, randomstring)
 
 app.listen(port, ()=>{
     console.log('Server Running At 8899 Port!')
