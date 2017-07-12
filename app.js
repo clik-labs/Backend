@@ -15,7 +15,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json())
 app.use(express.static('public'))
-app.use('/img',express.static('img'))
+app.use('/card_img',express.static('card_img'))
+app.use('/profile_img', express.static('profile_img'))
 app.use(express.static('views'))
 
 app.use(function (req, res, next) {
@@ -29,8 +30,9 @@ app.use(function (req, res, next) {
 require('./routes/auth')(app, db, randomstring, port)
 require('./routes/facebook')(app, db, passport, FacebookStrategy, port, randomstring)
 require('./routes/card')(app)
-require('./routes/feed')(app)
+require('./routes/feed')(app, db)
 require('./routes/self')(app)
+require('./routes/user')(app)
 
 app.listen(port, ()=>{
     console.log('Server Running At '+port+' Port!')

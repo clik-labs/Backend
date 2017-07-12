@@ -32,7 +32,7 @@ function auth(app, db, randomstring, port){
             name : body.name,
             token : token,
             profile : "",
-            profile_img : 'http://soylatte.kr:'+port+'/img/'+token+'.jpg',
+            profile_img : 'http://soylatte.kr:'+port+'/profile_img/'+token+'.jpg',
             facebook_id : "",
             interest : "",
             liked_card : [],
