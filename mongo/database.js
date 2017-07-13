@@ -11,7 +11,7 @@ var db = mongoose.connect('mongodb://localhost/cardline', (err)=>{
 
 mongoose.Promise = global.Promise;
 
-var comment = mongoose.Schema({
+var CommentSchema = mongoose.Schema({
     card_token: {type: String},
     writer_profile: {type: String},
     writer: {type: String},
@@ -38,7 +38,7 @@ var UsersSchema = mongoose.Schema({
     profile: {type: String},
     profile_img: {type: String},
     facebook_id: {type: String},
-    interest: {type: String},
+    interest: [String],
     liked_card: [String],
     liked_editor: [String],
     search_log: {type: Array},
@@ -48,7 +48,7 @@ var UsersSchema = mongoose.Schema({
     }]
 });
 
-Comment = mongoose.model('Comment', comment)
+Comment = mongoose.model('Comment', CommentSchema);
 Users = mongoose.model("users", UsersSchema);
 Cards = mongoose.model("Cards", CardSchema);
 exports.Users = Users;
