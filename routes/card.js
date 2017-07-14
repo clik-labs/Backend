@@ -1,6 +1,6 @@
 module.exports = card;
 
-function card(app, db){
+function card(app, db, multer){
 
     app.post('/card/info', (req, res)=>{
         var body = req.body;

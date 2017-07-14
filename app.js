@@ -29,7 +29,7 @@ app.use(function (req, res, next) {
 
 require('./routes/auth')(app, db, randomstring, port)
 require('./routes/facebook')(app, db, passport, FacebookStrategy, port, randomstring)
-require('./routes/card')(app)
+require('./routes/card')(app, multer, db)
 require('./routes/feed')(app, db)
 require('./routes/self')(app)
 require('./routes/user')(app)
