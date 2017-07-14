@@ -30,6 +30,9 @@ var CardSchema = mongoose.Schema({
     date: {type: String},
 });
 
+//liked 관심사
+//favorate 좋아요 누른 카드
+
 var UsersSchema = mongoose.Schema({
     email: {type: String},
     passwd: {type: String},
@@ -38,10 +41,10 @@ var UsersSchema = mongoose.Schema({
     profile: {type: String},
     profile_img: {type: String},
     facebook_id: {type: String},
-    interest: [String],
-    liked_card: [String],
-    liked_editor: [String],
-    search_log: {type: Array},
+    liked: [Number],
+    favorate : [String],
+    view_log : [String],
+    search_log: [String],
     alert: [{
         title: {type: String},
         summary: {type: String}

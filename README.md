@@ -207,21 +207,6 @@
 
         No User Found : HTTP 404
 
-> /self/info/update/like : Set User
->> Requiring Params
-
-    token : String
-
->> Returning Values
-
-    >>> On Success
-
-        HTTP 200: Return Array<Card>
-
-    >>> On Failure
-
-        No User Found : HTTP 404
-
 > /self/info/update/photo : Change Self Photo
 >> Requiring Params
 

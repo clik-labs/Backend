@@ -2,7 +2,7 @@ module.exports = feed;
 
 function feed(app, db){
     app.post('/feed/recommend', (req, res)=>{
-        var userinter = new Array();
+        var userliked = new Array();
         var body = req.body;
         db.Users.findOne({
             token : body.token
@@ -13,14 +13,14 @@ function feed(app, db){
                 throw err
             }
             else if(result){
-                userinter = result.interest
+                userliked = result.liked
             }
             else{
                 res.status(404).send('User Not Founded')
             }
         })
         db.Cards.find({
-            "$or": userinter
+            "$or": userliked
         }, (err, result)=>{
             if(err){
                 console.log('/feed/recommend cardfind Error')
