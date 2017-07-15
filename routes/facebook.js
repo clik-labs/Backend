@@ -13,7 +13,7 @@ function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
     });
 
     passport.use(new FacebookStrategy({
-        clientID : '132480600677095',
+        clientID : '841107499390440',
         clientSecret : 'e0dcace8cf7df0776b5c0011a1579ece',
     }, (accessToken, refreshToken, profile, done)=>{
         console.log(profile)
