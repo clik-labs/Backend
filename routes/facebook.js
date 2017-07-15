@@ -75,6 +75,7 @@ function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
                     throw err
                 }
                 else if(result){
+                    console.log(result)
                     res.status(200).send(result)
                 }
                 else{
