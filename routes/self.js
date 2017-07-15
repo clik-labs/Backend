@@ -1,6 +1,17 @@
 module.exports = self;
 
-function self(app, db){
+function self(app, db, multer, session){
+    var filename;
+    var filestorage = multer.diskStorage({
+        destination: (req, file, cb)=>{
+            cb(null, 'profile_img/')
+        },
+        filename: (req, file, cb)=>{
+            cb(null, filename+'.png')
+        }
+    })
+
+    var upload = multer({ storage : filestorage })
 
     /*UserData 검색해서 전달*/
     app.post('/self/info', (req, res)=>{
@@ -93,9 +104,12 @@ function self(app, db){
     })
 
     /*프로필 사진업데이트 API*/
-    app.post('/self/info/update/photo', (req, res)=>{
-
-    })
+    app.post('/self/info/update/photo',upload.single('file'), (req, res)=>{
+        console.log(req.file)
+        var body = req.body;
+        filename = body.token
+        console.log(body.token)
+    } )
 
     /*읽어본 카드 리스트*/
     app.post('/self/history', (req, res)=>{

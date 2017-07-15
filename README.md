@@ -27,7 +27,6 @@
 >> Requiring Params
 
     access_token : Facebook Token
-    //
 
 >> Return Values
 
