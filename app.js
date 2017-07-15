@@ -1,5 +1,6 @@
 var express = require('express')
 var session = require('express-session')
+var fs = require('fs')
 var port = process.env.PORT||8989;
 var bodyParser = require('body-parser')
 var app = express()
@@ -32,7 +33,7 @@ require('./routes/auth')(app, db, randomstring, port)
 require('./routes/facebook')(app, db, passport, FacebookStrategy, port, randomstring)
 require('./routes/card')(app, multer, db)
 require('./routes/feed')(app, db)
-require('./routes/self')(app, db, multer, session)
+require('./routes/self')(app, db, multer, session, port, randomstring, fs)
 require('./routes/user')(app, db)
 
 app.listen(port, ()=>{

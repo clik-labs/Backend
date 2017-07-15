@@ -1,12 +1,13 @@
 module.exports = self;
 
-function self(app, db, multer, session){
+function self(app, db, multer, session, port, randomstring, fs){
     var filename;
     var filestorage = multer.diskStorage({
         destination: (req, file, cb)=>{
             cb(null, 'profile_img/')
         },
         filename: (req, file, cb)=>{
+            filename = randomstring.generate(15)
             cb(null, filename+'.png')
         }
     })
@@ -105,10 +106,40 @@ function self(app, db, multer, session){
 
     /*프로필 사진업데이트 API*/
     app.post('/self/info/update/photo',upload.single('file'), (req, res)=>{
+        var body = req.body
         console.log(req.file)
-        var body = req.body;
-        filename = body.token
         console.log(body.token)
+        db.Users.findOne({
+            token : body.token
+        },(err, result)=>{
+            if(err){
+                console.log('/self/info/update/photo userfind Error')
+                res.status(403).send('/self/info/update/photo userfind Error')
+                throw err
+            }
+            else if(result.img_name){
+                fs.unlink(result.img_name,(err)=>{
+                    if(err){
+                        console.log('/self/info/update/photo filedelete Error')
+                        res.status(403).send('/self/info/update/photo filedelete Error')
+                        throw err
+                    }
+                })
+            }
+            db.Users.update({
+                "token" : body.token
+            },{$set:{"profile_img":'http://soylatte.kr:'+port+req.file.path, img_name:'./'+req.file.path}},(err)=>{
+                if(err){
+                    console.log('/self/info/update/photo userupdate Error')
+                    res.status(403).send('/self/info/update/photo userupdate Error')
+                    throw err
+                }
+                else{
+                    res.status(200).send('Update Success')
+                }
+            })
+        })
+
     } )
 
     /*읽어본 카드 리스트*/

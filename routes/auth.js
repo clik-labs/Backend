@@ -32,7 +32,8 @@ function auth(app, db, randomstring, port){
             name : body.name,
             token : token,
             profile : "",
-            profile_img : 'http://soylatte.kr:'+port+'/profile_img/'+token+'.jpg',
+            profile_img : "",
+            img_name : "",
             facebook_id : "",
             interest : "",
             liked_card : [],
@@ -61,7 +62,7 @@ function auth(app, db, randomstring, port){
                     }
                     else{
                         console.log(body.name+" Signup Success")
-                        res.status(200)
+                        res.status(200).send(body.name+" Signup Success")
                     }
                 })
 

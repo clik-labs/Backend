@@ -40,6 +40,7 @@ var UsersSchema = mongoose.Schema({
     token: {type: String},
     profile: {type: String},
     profile_img: {type: String},
+    img_name : {type:String},
     facebook_id: {type: String},
     liked: [Number],
     favorate : [String],
@@ -52,8 +53,8 @@ var UsersSchema = mongoose.Schema({
 });
 
 Comment = mongoose.model('Comment', CommentSchema);
-Users = mongoose.model("users", UsersSchema);
-Cards = mongoose.model("Cards", CardSchema);
+Users = mongoose.model("user", UsersSchema);
+Cards = mongoose.model("Card", CardSchema);
 exports.Users = Users;
 exports.Cards = Cards;
 exports.Comment = Comment
