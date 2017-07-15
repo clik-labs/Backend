@@ -18,7 +18,7 @@ function auth(app, db, randomstring, port){
             }
             else{
                 console.log('LOGIN FAILED')
-                res.status(401).send("NOT FOUND")
+                res.status(404).send("DATA NOT FOUNDED")
             }
         })
     })
@@ -82,9 +82,10 @@ function auth(app, db, randomstring, port){
             }
             else if(result){
                 res.status(200).send(result)
+                console.log(result.name+" AUTO LOGIN")
             }
             else{
-                res.status(401).send('Save Fail')
+                res.status(404).send('DATA NOT FOUNDED')
             }
         })
     })

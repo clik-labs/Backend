@@ -410,3 +410,65 @@
     >>> On Failure
 
         No User Found : HTTP 404
+        
+        
+### Schema
+    
+>User Schema
+    
+    email: {type: String},
+    passwd: {type: String},
+    name: {type: String},
+    token: {type: String},
+    profile: {type: String},
+    profile_img: {type: String},
+    img_name : {type:String},
+    facebook_id: {type: String},
+    liked: [Number],
+    favorate : [String],
+    view_log : [String],
+    search_log: [String],
+    alert: [{
+        title: {type: String},
+        summary: {type: String}
+    }]
+    
+>Card Schema
+
+    category : {type: String},
+    token : {type: String},
+    card_token: {type: String},
+    title: {type: String},
+    writer: {type: String},
+    subtitle: {type: String},
+    like: {type: Number},
+    date: {type: String}
+    
+>Comment Schema
+
+    card_token: {type: String},
+    writer_profile: {type: String},
+    writer: {type: String},
+    date: {type: String},
+    summary: {type: String},
+    
+        
+      
+      
+### 비 구현 API 
+
+
+
+> /user/info
+
+> /card/post
+
+> /card/post/uploadimage
+
+> /card/post/edit
+
+> /self/info
+
+> /self/info/update
+
+> /feed/search
