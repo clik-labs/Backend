@@ -17,7 +17,9 @@ function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
         clientID : "841107499390440",
         clientSecret : "e0dcace8cf7df0776b5c0011a1579ece",
     }, (accessToken, refreshToken, profile, done)=>{
+        console.log('PROFILE')
         console.log(profile)
+        done(null, profile)
         // db.Users.findOne({
         //     facebook_id : profile.id
         // }, (err, result)=>{
@@ -61,27 +63,31 @@ function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
     }))
 
     app.get('/auth/facebook/token', passport.authenticate('facebook-token'), (req, res)=>{
-        console.log("USER_TOKEN ==== "+req.param('access_token'))
-        // if(req.user){
-        //     db.Users.findOne({
-        //         facebook_id : req.user.id
-        //     },(err, result)=>{
-        //         if(err){
-        //             console.log('/auth/facebook/token userfind Error')
-        //             res.status(403).send('/auth/facebook/token userfine Error')
-        //             throw err
-        //         }
-        //         else if(result){
-        //             res.status(200).send(result)
-        //         }
-        //         else {
-        //             res.status(404).send('Data Not Founded')
-        //         }
-        //     })
-        // }
-        // else if(!req.user){
-        //     res.send(401, "Can't find User On Facebook. It May Be Unusable.");
-        // }
+        console.log('USER_TOKEN ==== '+req.param('access_token'));
+        console.log(req.user)
+        console.log(req.user.emails[0].value)
+        console.log(req.user.name.familyName+req.user.name.givenName)
+        res.send(200)
+        /*
+         if(req.user){
+         db.CardInfo.findOne({
+         Email : req.user.emails[0].value,
+         },(err, result)=>{
+         if(err){
+         console.log('/facebook/token Error')
+         throw err
+         }
+         else if(result){
+         res.send(200, result)
+         }
+         else{
+         res.send(401, "Data Not Founded")
+         }
+         })
+         }
+         else if(!req.user){
+         res.send(401, "Can't find User On Facebook. It May Be Unusable.");
+         }*/
     });
 
     app.get('/auth/facebook/callback',
