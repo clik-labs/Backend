@@ -1,4 +1,5 @@
 module.exports = facebook;
+
 function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
     app.use(passport.initialize());
     app.use(passport.session());
@@ -12,11 +13,9 @@ function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
     });
 
     passport.use(new FacebookStrategy({
-        clientID : '841107499390440',
+        clientID : '132480600677095',
         clientSecret : 'e0dcace8cf7df0776b5c0011a1579ece',
-        callbackURL: "/auth/facebook/callback",
-        profileFields: ['id', 'email', 'gender', 'link', 'locale', 'name', 'timezone', 'verified'],
-    }, (req, accessToken, refreshToken, profile, done)=>{
+    }, (accessToken, refreshToken, profile, done)=>{
         console.log(profile)
         db.Users.findOne({
             facebook_id : profile.id
@@ -41,21 +40,19 @@ function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
                     like : 0,
                     alert : []
                 })
-                console.log(user)
                 user.save((err)=>{
                     if(err){
                         console.log('Facebook Save Error!')
                         throw err
                     }
                     else{
-                        console.log(profile.displayName+" Facebook Login Success")
-                        req.session.data = result
+                        console.log(profile.name.familyName+profile.name.givenName+" Facebook Login Success")
                         done(null, user)
                     }
+
                 })
             }
             else if(result){
-                req.session.data == result
                 done(null, result)
             }
         })
@@ -63,22 +60,36 @@ function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
     }))
 
     app.get('/auth/facebook/token',
-        passport.authenticate('facebook', { scope : ['email', 'public_profile', 'read_stream', 'publish_actions']})
+        passport.authenticate(passport.authenticate('facebook-token'), (req, res)=>{
+            console.log("USER_TOKEN ==== "+req.param('access_token'))
+            if(req.user){
+                db.Users.findOne({
+                    facebook_id : req.user.id
+                },(err, result)=>{
+                    if(err){
+                        console.log('/auth/facebook/token userfind Error')
+                        res.status(403).send('/auth/facebook/token userfine Error')
+                        throw err
+                    }
+                    else if(result){
+                        res.status(200).send(result)
+                    }
+                    else {
+                        res.status(404).send('Data Not Founded')
+                    }
+                })
+            }
+            else if(!req.user){
+                res.send(401, "Can't find User On Facebook. It May Be Unusable.");
+            }
+
+        })
     )
-
-    app.get('/success', (req, res)=>{
-        res.status(200).send(req.session.data)
-    })
-
-    app.get('/fail', (req, res)=>{
-        res.status(500).send("로그인 실패")
-    })
-
 
     app.get('/auth/facebook/callback',
         passport.authenticate('facebook', {
-            successRedirect: '/success',
-            failureRedirect: '/fail'
+            successRedirect: '/',
+            failureRedirect: '/'
         }));
 
 }

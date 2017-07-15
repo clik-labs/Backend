@@ -18,7 +18,7 @@ function self(app, db){
                 res.status(403).send('/self/info/card cardfind Error')
                 throw err
             }
-            else if(result){
+            else if(result[0]!=undefined){
                 res.status(200).send(result)
             }
             else{

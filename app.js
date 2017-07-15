@@ -6,7 +6,7 @@ var multer = require('multer')
 var randomstring = require('randomstring')
 var fcm = require('fcm-node')
 var passport = require('passport')
-var FacebookStrategy = require('passport-facebook')
+var FacebookStrategy = require('passport-facebook-token')
 var db = require('./mongo/database')
 
 app.use(bodyParser.urlencoded({
@@ -31,8 +31,8 @@ require('./routes/auth')(app, db, randomstring, port)
 require('./routes/facebook')(app, db, passport, FacebookStrategy, port, randomstring)
 require('./routes/card')(app, multer, db)
 require('./routes/feed')(app, db)
-require('./routes/self')(app)
-require('./routes/user')(app)
+require('./routes/self')(app, db)
+require('./routes/user')(app, db)
 
 app.listen(port, ()=>{
     console.log('Server Running At '+port+' Port!')
