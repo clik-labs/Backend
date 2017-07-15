@@ -17,6 +17,7 @@ function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
         clientID : "841107499390440",
         clientSecret : "e0dcace8cf7df0776b5c0011a1579ece",
     }, (accessToken, refreshToken, profile, done)=>{
+        console.log('PROFILE')
         console.log(profile)
         db.Users.findOne({
             facebook_id : profile.id
@@ -57,11 +58,10 @@ function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
                 done(null, profile)
             }
         })
-
     }))
 
     app.get('/auth/facebook/token', passport.authenticate('facebook-token'), (req, res)=>{
-        console.log("user token ========= " + req.param('access_token'));
+        console.log("USER_TOKEN ==== " + req.param('access_token'));
         console.log(req.user)
         console.log(req.user.emails[0].value)
         console.log(req.user.name.familyName+req.user.name.givenName)
