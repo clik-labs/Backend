@@ -471,4 +471,6 @@
 
 > /self/info/update
 
+> /self/info/card
+
 > /feed/search
