@@ -215,8 +215,4 @@ function self(app, db, multer, session, port, randomstring, fs){
             }
         })
     })
-
-    app.post('/test/api', (req, res)=>{
-        console.log()
-    })
 }
