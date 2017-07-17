@@ -16,7 +16,7 @@ var CommentSchema = mongoose.Schema({
     writer_profile: {type: String},
     writer: {type: String},
     date: {type: String},
-    summary: {type: String},
+    comment: {type: String}
 });
 
 var CardSchema = mongoose.Schema({
@@ -27,7 +27,7 @@ var CardSchema = mongoose.Schema({
     writer: {type: String},
     subtitle: {type: String},
     like: {type: Number},
-    date: {type: String},
+    date: {type: String}
 });
 
 //liked 관심사
@@ -36,6 +36,7 @@ var CardSchema = mongoose.Schema({
 var UsersSchema = mongoose.Schema({
     email: {type: String},
     passwd: {type: String},
+    firebase_token: {type: String},
     name: {type: String},
     token: {type: String},
     profile: {type: String},
@@ -45,12 +46,17 @@ var UsersSchema = mongoose.Schema({
     liked: [Number],
     favorite : [String],
     view_log : [String],
-    search_log: [String],
-    alert: [{
-        title: {type: String},
-        summary: {type: String}
-    }]
+    search_log: [String]
 });
+
+var NotificationSchema = mongoose.Schema({
+    notificationid : {type: String},
+    userFrom : {type: String},
+    userFromEmail : {type: String},
+    isComment : {type: Boolean},
+    originCardToken : {type :String},
+    content : {type:String}
+})
 
 Comment = mongoose.model('Comment', CommentSchema);
 Users = mongoose.model("user", UsersSchema);

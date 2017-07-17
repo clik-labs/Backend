@@ -411,6 +411,24 @@
 
         No User Found : HTTP 404
         
+### FireBase
+
+> /firebase/update : user firebase token update
+>> Requiring Params
+
+    token : String
+    firebase_token : String
+
+>> Returning Values
+
+    >>> On Success
+    
+        HTTP 200
+        
+    >>> On Failure
+    
+        HTTP 403
+        
         
 ### Schema
     
@@ -420,6 +438,7 @@
     passwd: {type: String},
     name: {type: String},
     token: {type: String},
+    firebase_token: {type: String},
     profile: {type: String},
     profile_img: {type: String},
     img_name : {type:String},

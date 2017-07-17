@@ -1,5 +1,8 @@
 var express = require('express')
 var session = require('express-session')
+var FCM = require('fcm-push')
+const firebase_token = 'AIzaSyAQTYfYZXMrrxwt1kaA3lbBEQSrb9Bw6Q4'
+var fcm = FCM(firebase_token)
 var fs = require('fs')
 var port = process.env.PORT||8989;
 var bodyParser = require('body-parser')
@@ -35,6 +38,7 @@ require('./routes/card')(app, multer, db)
 require('./routes/feed')(app, db)
 require('./routes/self')(app, db, multer, session, port, randomstring, fs)
 require('./routes/user')(app, db)
+require('./routes/firebase')(app, db, fcm)
 
 app.listen(port, ()=>{
     console.log('Server Running At '+port+' Port!')
