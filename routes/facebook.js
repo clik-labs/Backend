@@ -36,10 +36,10 @@ function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
                     profile : "",
                     profile_img : profile.photos[0].value,
                     facebook_id : profile.id,
-                    interest : "",
-                    liked_card : [],
-                    liked_editor : [],
-                    like : 0,
+                    favorite : [],
+                    liked : [],
+                    view_log : [],
+                    serch_log : [],
                     alert : []
                 })
                 user.save((err)=>{

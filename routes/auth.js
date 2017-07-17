@@ -34,11 +34,10 @@ function auth(app, db, randomstring, port){
             profile : "",
             profile_img : "",
             img_name : "",
-            facebook_id : "",
-            interest : "",
-            liked_card : [],
-            liked_editor : [],
-            like : 0,
+            favorite : [],
+            liked : [],
+            view_log : [],
+            search_log : [],
             alert : []
         })
         db.Users.findOne({
@@ -61,8 +60,8 @@ function auth(app, db, randomstring, port){
                         throw err
                     }
                     else{
-                        console.log(body.name+" Signup Success")
-                        res.status(200).send(body.name+" Signup Success")
+                        console.log(body.name+" SINGUP SUCCESS")
+                        res.status(200).send(body.name+" SIGNUP SUCCESS")
                     }
                 })
 

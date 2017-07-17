@@ -143,7 +143,7 @@
             { Card Schema },
             { Card Schema },
             { Card Schema }
-        ],
+       
         editor : [
             { User Schema },
             { User Schema },
@@ -425,7 +425,7 @@
     img_name : {type:String},
     facebook_id: {type: String},
     liked: [Number],
-    favorate : [String],
+    favorite : [String],
     view_log : [String],
     search_log: [String],
     alert: [{

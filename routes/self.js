@@ -169,12 +169,12 @@ function self(app, db, multer, session, port, randomstring, fs){
             token : body.token
         },(err, result)=>{
             if(err){
-                console.log('/self/favorate userfind Error')
-                res.status(403).send('/self/favorate userfind Error')
+                console.log('/self/favorite userfind Error')
+                res.status(403).send('/self/favorite userfind Error')
                 throw err
             }
             else if(result){
-                res.status(200).send(result.favorate)
+                res.status(200).send(result.favorite)
             }
             else{
                 res.status(404).send('Data Not Founded')
