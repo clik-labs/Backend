@@ -17,7 +17,8 @@ function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
         clientID : "841107499390440",
         clientSecret : "e0dcace8cf7df0776b5c0011a1579ece",
     }, (accessToken, refreshToken, profile, done)=>{
-        console.log('PROFILE')
+        console.log('==================== FACEBOOK ====================')
+        console.log('======== PROFILE ========')
         console.log(profile)
         db.Users.findOne({
             facebook_id : profile.id
@@ -75,7 +76,9 @@ function facebook(app, db, passport, FacebookStrategy, port, randomstring) {
                     throw err
                 }
                 else if(result){
+                    console.log('======== USER_INFO ========')
                     console.log(result)
+                    console.log('==================== END ====================')
                     res.status(200).send(result)
                 }
                 else{
