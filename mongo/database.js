@@ -46,7 +46,8 @@ var UsersSchema = mongoose.Schema({
     liked: [Number],
     favorite : [String],
     view_log : [String],
-    search_log: [String]
+    search_log: [String],
+    notification : [String]
 });
 
 var NotificationSchema = mongoose.Schema({
@@ -59,9 +60,11 @@ var NotificationSchema = mongoose.Schema({
 })
 
 Comment = mongoose.model('Comment', CommentSchema);
-Users = mongoose.model("user", UsersSchema);
+Users = mongoose.model("User", UsersSchema);
 Cards = mongoose.model("Card", CardSchema);
+Notifications = mongoose.model("Notification", NotificationSchema)
 exports.Users = Users;
 exports.Cards = Cards;
 exports.Comment = Comment
+exports.Notifications = Notifications
 exports.db = db;

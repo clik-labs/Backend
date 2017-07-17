@@ -11,14 +11,6 @@
 * Server Backend Developer [Seongwoon Cho](https://github.com/SunSet0418)
 * Server Backend Developer [Yeonjun Kim](https://github.com/iwin2471)
 
-## Database Schema
-
-> UserSchema
-
-    _id : String
-
-<!-- 형식에 맞춰 추가해주세요. -->
-
 ## API Document
 
 ### Auth

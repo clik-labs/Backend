@@ -187,19 +187,36 @@ function self(app, db, multer, session, port, randomstring, fs){
         var body = req.body
         db.Users.findOne({
             token : body.token
-        },(err, result)=>{
+        }, (err, result)=>{
             if(err){
                 console.log('/self/notification userfind Error')
-                res.send(403).send('/self/notification userfind Error')
+                res.status(403).send('/self/notification userfind Error')
                 throw err
             }
             else if(result){
-                res.send(200).send(result.notification)
+                db.Notifications.find({
+                    notificationid : result.notification
+                },(err, result)=>{
+                    if(err){
+                        console.log('/self/notification notification find Error')
+                        res.status(403).send('/self/notification notification find Error')
+                        throw err
+                    }
+                    else if(result){
+                        res.status(200).send(result)
+                    }
+                    else{
+                        res.status(404).send('Data Not Founded')
+                    }
+                })
             }
             else {
-                res.status(404).send('Data Not Founded')
+                res.status(404).send('User Not Founded')
             }
         })
     })
 
+    app.post('/test/api', (req, res)=>{
+        console.log()
+    })
 }
