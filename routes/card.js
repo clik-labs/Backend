@@ -141,14 +141,16 @@ function card(app, db, multer, randomstring, moment){
     })
 
     app.post('/card/post', (req, res)=>{
+        var body = req.body;
+        const time = moment().format('YYYY년 MM월 DD일 h:mm A');
         console.log('======== ARRAY ========')
         arrset()
-        const time = moment().format('YYYY년 MM월 DD일 h:mm A');
-        var body = req.body;
         //var get = JSON.parse(body.news_detail)
-        var get = body.news_detail
-        console.log('NEWS_DETAIL Type ==== '+typeof body.news_detail)
         console.log('========= END =========')
+        console.log('======== BODY ========')
+        console.log(body)
+        console.log('======== END =========')
+        console.log('NEWS_DETAIL Type ==== '+typeof body.news_detail)
         db.Users.findOne({
             token : body.token
         }, (err, result)=>{
