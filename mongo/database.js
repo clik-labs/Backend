@@ -20,14 +20,13 @@ var CommentSchema = mongoose.Schema({
 });
 
 var CardSchema = mongoose.Schema({
-    category : {type: String},
-    token : {type: String},
+    category : {type:Number},
     card_token: {type: String},
     title: {type: String},
     writer: {type: String},
-    subtitle: {type: String},
     like: {type: Number},
-    date: {type: String}
+    date: {type: String},
+    card_info: {type: String}
 });
 
 //liked 관심사

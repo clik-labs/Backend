@@ -29,6 +29,7 @@ function auth(app, db, randomstring, port){
         var users = new db.Users({
             email : body.email,
             passwd : body.passwd,
+            firebase_token : "",
             name : body.name,
             token : token,
             profile : "",

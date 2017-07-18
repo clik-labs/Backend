@@ -356,20 +356,6 @@
 
         No Card Found : HTTP 404
 
-> /card/post/uploadImage : Upload Card Image
->> Requiring Params
-
-    <민석이랑 상의>
-
->> Returning Values
-
-    >>> On Success
-
-        HTTP 200: Return Nothing
-
-    >>> On Failure
-
-        No Card Found : HTTP 404
 
 > /card/post/edit : Edit Card Image
 >> Requiring Params
@@ -471,8 +457,6 @@
 > /user/info
 
 > /card/post
-
-> /card/post/uploadimage
 
 > /card/post/edit
 

@@ -8,6 +8,7 @@ var port = process.env.PORT||8989;
 var bodyParser = require('body-parser')
 var app = express()
 var multer = require('multer')
+var moment = require('moment')
 var randomstring = require('randomstring')
 var fcm = require('fcm-node')
 var passport = require('passport')
@@ -34,7 +35,7 @@ app.use(function (req, res, next) {
 
 require('./routes/auth')(app, db, randomstring, port)
 require('./routes/facebook')(app, db, passport, FacebookStrategy, port, randomstring)
-require('./routes/card')(app, multer, db)
+require('./routes/card')(app, db, multer, randomstring, moment)
 require('./routes/feed')(app, db)
 require('./routes/self')(app, db, multer, session, port, randomstring, fs)
 require('./routes/user')(app, db)

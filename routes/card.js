@@ -1,6 +1,17 @@
 module.exports = card;
 
-function card(app, db, multer){
+function card(app, db, multer, randomstring, moment){
+    var randomArr = new Array();
+    var filestorage = multer.diskStorage({
+        destination: (req, file, cb)=>{
+            cb(null, 'card_img/')
+        },
+        filename: (req, file, cb)=>{
+            cb(null, file.originalname)
+        }
+    })
+
+    var upload = multer({ storage : filestorage })
 
     app.post('/card/info', (req, res)=>{
         var body = req.body;
@@ -128,14 +139,54 @@ function card(app, db, multer){
     })
 
     app.post('/card/post', (req, res)=>{
+        console.log('======== ARRAY ========')
+        arrset()
+        const time = moment().format('YYYY년 MM월 DD일 h:mm A');
+        var body = req.body;
+        console.log('========= END =========')
+        db.Users.findOne({
+            token : body.token
+        }, (err, result)=>{
+            if(err){
+                console.log('/card/post userfind Error')
+                res.status(403).send('/card/post userifnd Error')
+                throw err
+            }
+            else if(result){
+                var data = new db.Cards({
+                    category : body.category,
+                    card_token : randomstring.generate(15),
+                    title : body.title,
+                    writer : result.name,
+                    date : time,
+                    like : 0,
+                    card_info : body.json
+                })
+                console.log('======== CARD ========')
+                console.log(data)
+                console.log('========= END =========')
+            }
+            else{
+                res.status(404).send('User Not Founded')
+            }
+        })
 
     })
 
-    app.post('/card/post/uploadimage', (req, res)=>{
-
+    app.post('/card/post/uploadimage', upload.array('file'), (req, res)=>{
+        console.log('======== FILES ========')
+        console.log(req.files)
+        console.log('========= END =========')
     })
 
     app.post('/card/post/edit', (req, res)=>{
 
     })
+
+    function arrset() {
+        for (var i=0;i<6;i++){
+            randomArr[i] = randomstring.generate(15)
+        }
+        console.log(randomArr)
+    }
 }

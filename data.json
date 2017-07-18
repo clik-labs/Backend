@@ -1,0 +1,92 @@
+{
+  "id": "1",
+  "card_token": "card_token",
+  "card_title": "String",
+  "card_author" : "String",
+  "card_page": 2,
+  "category": "0",
+
+  "news_detail": [
+    {
+      "main_img": "show.png",
+      "page": 1,
+      "res_count": [2, 2],
+      "res_back": "resss.png",
+      "res_img": [
+        {
+          "img": "f0.png",
+          "x": "float or double",
+          "y": "float or double",
+          "width": "int",
+          "height": "int"
+        },
+        {
+          "img": "f0.png",
+          "x": "float or double",
+          "y": "float or double",
+          "width": "int",
+          "height": "int"
+        }
+      ],
+      "res_txt": [
+        {
+          "text": "text",
+          "x": "float or double",
+          "y": "float or double",
+          "size": "int",
+          "font": "String",
+          "color": "String"
+        },
+        {
+          "text": "text",
+          "x": "float or double",
+          "y": "float or double",
+          "size": "int",
+          "font": "String",
+          "color": "String"
+        }
+      ]
+    },
+    {
+      "main_img": "show.png",
+      "page": 2,
+      "res_count": [2, 2],
+      "res_back": "back.png",
+      "res_img": [
+        {
+          "img": "f0.png",
+          "x": "float or double",
+          "y": "float or double",
+          "width": "int",
+          "height": "int"
+        },
+        {
+          "img": "f1.png",
+          "x": "float or double",
+          "y": "float or double",
+          "width": "int",
+          "height": "int"
+        }
+      ],
+      "res_txt": [
+        {
+          "text": "text",
+          "x": "float or double",
+          "y": "float or double",
+          "size": "int",
+          "font": "String",
+          "color": "String"
+        },
+        {
+          "text": "text",
+          "x": "x",
+          "y": "y",
+          "size": "int",
+          "font": "String",
+          "color": "String"
+        }
+      ]
+    }
+  ]
+}
+

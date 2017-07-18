@@ -107,8 +107,10 @@ function self(app, db, multer, session, port, randomstring, fs){
     /*프로필 사진업데이트 API*/
     app.post('/self/info/update/photo',upload.single('file'), (req, res)=>{
         var body = req.body
+        console.log('======== FILE ========')
         console.log(req.file)
-        console.log(body.token)
+        console.log('========= END =========')
+        console.log('REQ_TOKEN == '+body.token)
         db.Users.findOne({
             token : body.token
         },(err, result)=>{
@@ -117,18 +119,23 @@ function self(app, db, multer, session, port, randomstring, fs){
                 res.status(403).send('/self/info/update/photo userfind Error')
                 throw err
             }
-            else if(result.img_name){
-                fs.unlink(result.img_name,(err)=>{
-                    if(err){
-                        console.log('/self/info/update/photo filedelete Error')
-                        res.status(403).send('/self/info/update/photo filedelete Error')
-                        throw err
-                    }
-                })
+            else if(result){
+                console.log('======== RESULT ========')
+                console.log(result)
+                console.log('========= END =========')
+                if(result.img_name){
+                    fs.unlink(result.img_name,(err)=>{
+                        if(err){
+                            console.log('/self/info/update/photo filedelete Error')
+                            res.status(403).send('/self/info/update/photo filedelete Error')
+                            throw err
+                        }
+                    })
+                }
             }
             db.Users.update({
                 "token" : body.token
-            },{$set:{"profile_img":'http://soylatte.kr:'+port+req.file.path, img_name:'./'+req.file.path}},(err)=>{
+            },{$set:{"profile_img":'http://soylatte.kr:'+port+'/'+req.file.path, img_name:'./'+req.file.path}},(err)=>{
                 if(err){
                     console.log('/self/info/update/photo userupdate Error')
                     res.status(403).send('/self/info/update/photo userupdate Error')
