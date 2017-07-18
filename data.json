@@ -1,11 +1,4 @@
 {
-  "id": "1",
-  "card_token": "card_token",
-  "card_title": "String",
-  "card_author" : "String",
-  "card_page": 2,
-  "category": "0",
-
   "news_detail": [
     {
       "main_img": "show.png",
@@ -89,4 +82,3 @@
     }
   ]
 }
-

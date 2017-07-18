@@ -142,7 +142,18 @@ function self(app, db, multer, session, port, randomstring, fs){
                     throw err
                 }
                 else if(results.nModified == 1){
-                    res.status(200).send('Update Success')
+                    db.Users.findOne({
+                        token : body.token
+                    }, (err, result)=>{
+                        if(err){
+                            console.log('/self/info/update/photo updatefind Error')
+                            res.status(403).send('/self/info/update/photo updatefind Error')
+                            throw err
+                        }
+                        else if(result){
+                            res.status(200).send(result)
+                        }
+                    })
                 }
                 else{
                     res.status(404).send('Not Changed')

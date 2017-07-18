@@ -143,6 +143,8 @@ function card(app, db, multer, randomstring, moment){
         arrset()
         const time = moment().format('YYYY년 MM월 DD일 h:mm A');
         var body = req.body;
+        var json = body.json
+        imagename(body.json, body.card_page)
         console.log('========= END =========')
         db.Users.findOne({
             token : body.token
@@ -155,12 +157,13 @@ function card(app, db, multer, randomstring, moment){
             else if(result){
                 var data = new db.Cards({
                     category : body.category,
+                    card_page : body.card_page,
                     card_token : randomstring.generate(15),
                     title : body.title,
                     writer : result.name,
                     date : time,
                     like : 0,
-                    card_info : body.json
+                    news_detail : body.json
                 })
                 console.log('======== CARD ========')
                 console.log(data)
@@ -184,9 +187,20 @@ function card(app, db, multer, randomstring, moment){
     })
 
     function arrset() {
-        for (var i=0;i<6;i++){
+        for (var i=0;i<30;i++){
             randomArr[i] = randomstring.generate(15)
         }
         console.log(randomArr)
+    }
+
+    function imagename(json, page){
+        console.log('JSON = '+json)
+        console.log('PAGE = '+page)
+        for (var i=0;i<page; i++){
+            console.log(json[i].res_count[0])
+            for (var j=0; j<json[i].res_count[0];j++){
+                json[i].res_img[j]
+            }
+        }
     }
 }
