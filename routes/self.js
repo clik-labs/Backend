@@ -135,7 +135,8 @@ function self(app, db, multer, session, port, randomstring, fs){
             }
             db.Users.update({
                 "token" : body.token
-            },{$set:{"profile_img":'http://soylatte.kr:'+port+'/'+req.file.path, img_name:'./'+req.file.path}},(err)=>{
+            },{$set:{"profile_img":'http://soylatte.kr:'+port+'/'+req.file.path, img_name:'./'+req.file.path}},(err, results)=>{
+                console.log(results)
                 if(err){
                     console.log('/self/info/update/photo userupdate Error')
                     res.status(403).send('/self/info/update/photo userupdate Error')
