@@ -146,6 +146,7 @@ function card(app, db, multer, randomstring, moment){
         console.log('======== ARRAY ========')
         arrset()
         //var get = JSON.parse(body.news_detail)
+        var get = body.news_detail
         console.log('========= END =========')
         console.log('======== BODY ========')
         console.log(body)
