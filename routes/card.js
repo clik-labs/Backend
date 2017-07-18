@@ -147,7 +147,7 @@ function card(app, db, multer, randomstring, moment){
         var body = req.body;
         //var get = JSON.parse(body.news_detail)
         var get = body.news_detail
-        cosole.log('NEWS_DETAIL Type ==== '+typeof body.news_detail)
+        console.log('NEWS_DETAIL Type ==== '+typeof body.news_detail)
         console.log('========= END =========')
         db.Users.findOne({
             token : body.token
