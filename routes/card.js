@@ -2,12 +2,14 @@ module.exports = card;
 
 function card(app, db, multer, randomstring, moment){
     var randomArr = new Array();
+    var randomKey = 0;
     var filestorage = multer.diskStorage({
         destination: (req, file, cb)=>{
             cb(null, 'card_img/')
         },
         filename: (req, file, cb)=>{
-            cb(null, file.originalname)
+            cb(null, randomArr[randomKey])
+            randomKey++;
         }
     })
 
@@ -186,9 +188,11 @@ function card(app, db, multer, randomstring, moment){
     })
 
     app.post('/card/post/uploadimage', upload.array('file'), (req, res)=>{
+        var files = req.files
         console.log('======== FILES ========')
-        console.log(req.files)
+        console.log(files)
         console.log('========= END =========')
+        randomKey = 0;
     })
 
     app.post('/card/post/edit', (req, res)=>{
