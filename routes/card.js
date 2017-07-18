@@ -145,7 +145,12 @@ function card(app, db, multer, randomstring, moment){
         const time = moment().format('YYYY년 MM월 DD일 h:mm A');
         console.log('======== ARRAY ========')
         arrset()
-        //var get = JSON.parse(body.news_detail)
+        if(typeof body.news_detail == string){
+            var get = JSON.parse(body.news_detail)
+        }
+        else if(typeof body.news_detail == object) {
+            var get = body.news_detail
+        }
         var get = body.news_detail
         console.log('========= END =========')
         console.log('======== BODY ========')
