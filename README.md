@@ -344,7 +344,10 @@
 > /card/post : Post Card
 >> Requiring Params
 
-    <민석이랑 상의>
+    category : Number
+    card_page : Number
+    title : String
+    news_detail : Array
 
 >> Returning Values
 
@@ -356,6 +359,21 @@
 
         No Card Found : HTTP 404
 
+
+> /card/post/imageupload : Post Card Image
+>> Requiring Params
+
+    file : fileArray
+    
+>> Returning Values
+
+    >>> On Success
+        
+        HTTP 200 
+        
+    >>> On Failure
+    
+        HTTP 404
 
 > /card/post/edit : Edit Card Image
 >> Requiring Params

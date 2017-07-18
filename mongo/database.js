@@ -22,11 +22,12 @@ var CommentSchema = mongoose.Schema({
 var CardSchema = mongoose.Schema({
     category : {type:Number},
     card_token: {type: String},
+    card_page : {type: Number},
     title: {type: String},
     writer: {type: String},
     like: {type: Number},
     date: {type: String},
-    card_info: {type: String}
+    news_detail: {type: Array}
 });
 
 //liked 관심사

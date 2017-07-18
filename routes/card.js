@@ -143,8 +143,7 @@ function card(app, db, multer, randomstring, moment){
         arrset()
         const time = moment().format('YYYY년 MM월 DD일 h:mm A');
         var body = req.body;
-        var json = body.json
-        imagename(body.json, body.card_page)
+        var get = JSON.parse(body.news_detail)
         console.log('========= END =========')
         db.Users.findOne({
             token : body.token
@@ -163,11 +162,21 @@ function card(app, db, multer, randomstring, moment){
                     writer : result.name,
                     date : time,
                     like : 0,
-                    news_detail : body.json
+                    news_detail : imagename(get)
                 })
                 console.log('======== CARD ========')
                 console.log(data)
                 console.log('========= END =========')
+                data.save((err)=>{
+                    if(err){
+                        console.log('/card/post save Error')
+                        res.status(403).send('/card/post save Error')
+                        throw err
+                    }
+                    else{
+                        res.status(200).send(data)
+                    }
+                })
             }
             else{
                 res.status(404).send('User Not Founded')
@@ -188,19 +197,30 @@ function card(app, db, multer, randomstring, moment){
 
     function arrset() {
         for (var i=0;i<30;i++){
-            randomArr[i] = randomstring.generate(15)
+            randomArr[i] = randomstring.generate(15)+'.png'
         }
         console.log(randomArr)
     }
 
-    function imagename(json, page){
+    function imagename(json){
+        var count = 0;
         console.log('JSON = '+json)
-        console.log('PAGE = '+page)
-        for (var i=0;i<page; i++){
+        console.log('JSON_LENGTH = '+json.length)
+        for (var i=0;i<json.length; i++){
+            json[i].main_img = 'http://soylatte.kr:8989/card_img/'+randomArr[count];
+            count++;
+            json[i].res_back = 'http://soylatte.kr:8989/card_img/'+randomArr[count];
+            count++;
             console.log(json[i].res_count[0])
             for (var j=0; j<json[i].res_count[0];j++){
-                json[i].res_img[j]
+                json[i].res_img[j].img = 'http://soylatte.kr:8989/card_img/'+randomArr[count]
+                count++
+                console.log(json[i].res_img[j].img)
             }
         }
+        console.log("======== REFACTOR ========")
+        console.log(json)
+        console.log("========== END ===========")
+        return json
     }
 }
