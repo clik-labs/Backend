@@ -16,7 +16,35 @@ function self(app, db, multer, session, port, randomstring, fs){
 
     /*UserData 검색해서 전달*/
     app.post('/self/info', (req, res)=>{
-
+        var body = req.body
+        db.Users.findOne({
+            token : body.token
+        }, (err, uresult)=>{
+            if(err){
+                console.log('/self/info userfind Error')
+                res.status(403).send('/self/info userfind Error')
+                throw err
+            }
+            else if(uresult){
+                db.Cards.find({
+                    token : body.token
+                }, (err, cresult)=>{
+                    if(err){
+                        console.log('/self/info cardfind Error')
+                        res.status(403).send('/self/info cardfind Error')
+                        throw err
+                    }
+                    else if(cresult){
+                        var response = ([
+                            uresult, cresult
+                        ])
+                    }
+                })
+            }
+            else{
+                res.status(404).send('User Not Founded')
+            }
+        })
     })
 
     /*내가 작성한글 검색해서 전달*/

@@ -1,6 +1,7 @@
 module.exports = card;
 
 function card(app, db, multer, randomstring, moment){
+    var toomany;
     var randomArr = new Array();
     var randomKey = 0;
     var filestorage = multer.diskStorage({
@@ -164,6 +165,7 @@ function card(app, db, multer, randomstring, moment){
                     category : body.category,
                     card_page : body.card_page,
                     card_token : randomstring.generate(15),
+                    token : result.token,
                     title : body.title,
                     writer : result.name,
                     date : time,

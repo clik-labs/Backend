@@ -25,6 +25,7 @@ var CardSchema = mongoose.Schema({
     card_page : {type: Number},
     title: {type: String},
     writer: {type: String},
+    token : {type: String},
     like: {type: Number},
     date: {type: String},
     news_detail: {type: Array}

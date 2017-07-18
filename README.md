@@ -472,16 +472,8 @@
       
 ### 비 구현 API (7/17 구현예정)
 
-> /user/info
-
-> /card/post
-
 > /card/post/edit
 
-> /self/info
-
 > /self/info/update
-
-> /self/info/card
 
 > /feed/search
