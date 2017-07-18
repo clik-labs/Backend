@@ -156,7 +156,7 @@ function card(app, db, multer, randomstring, moment){
         console.log('======== BODY ========')
         console.log(body)
         console.log('======== END =========')
-        console.log('NEWS_DETAIL Type ==== '+typeof body.news_detail)
+        console.log('NEWS_DETAIL Type ==== '+get)
         db.Users.findOne({
             token : body.token
         }, (err, result)=>{
