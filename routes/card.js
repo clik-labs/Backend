@@ -145,7 +145,9 @@ function card(app, db, multer, randomstring, moment){
         arrset()
         const time = moment().format('YYYY년 MM월 DD일 h:mm A');
         var body = req.body;
-        var get = JSON.parse(body.news_detail)
+        //var get = JSON.parse(body.news_detail)
+        var get = body.news_detail
+        cosole.log('NEWS_DETAIL Type ==== '+typeof body.news_detail)
         console.log('========= END =========')
         db.Users.findOne({
             token : body.token
