@@ -145,18 +145,12 @@ function card(app, db, multer, randomstring, moment){
         const time = moment().format('YYYY년 MM월 DD일 h:mm A');
         console.log('======== ARRAY ========')
         arrset()
-        if(typeof body.news_detail === 'string'){
-            var get = JSON.parse(body.news_detail)
-        }
-        else if(typeof body.news_detail === 'object') {
-            var get = body.news_detail
-        }
-        var get = body.news_detail
+        var get = JSON.parse(body.news_detail)
         console.log('========= END =========')
         console.log('======== BODY ========')
         console.log(body)
         console.log('======== END =========')
-        console.log('NEWS_DETAIL Type ==== '+get)
+        console.log('NEWS_DETAIL Type ==== '+typeof get)
         db.Users.findOne({
             token : body.token
         }, (err, result)=>{
