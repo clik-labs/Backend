@@ -389,7 +389,16 @@
     >>> On Failure
 
         No Card Found : HTTP 404
+        
+> /card/comment : Comment of Card
+>> Requiring Params
 
+    card_token : String
+    writer_profile : String
+    writer : String
+    date : String
+    comment : String
+    
 ### User
 
 > /user/info : Get Editor Info
@@ -455,7 +464,6 @@
     card_token: {type: String},
     title: {type: String},
     writer: {type: String},
-    subtitle: {type: String},
     like: {type: Number},
     date: {type: String}
     

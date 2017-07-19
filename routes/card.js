@@ -233,4 +233,70 @@ function card(app, db, multer, randomstring, moment){
         console.log("========== END ===========")
         return json
     }
+
+    app.post('/card/commnet', (req, res)=>{
+        var body = req.body;
+        const time = moment().format('YYYY년 MM월 DD일 h:mm A');
+        db.Users.findOne({
+            token : body.token
+        }, (err, uresult)=>{
+            if(err){
+                console.log('/card/comment userfind Error')
+                res.status(403).send('/card/comment userfind Error')
+                throw err
+            }
+            else if(uresult){
+                db.Cards.findOne({
+                    card_token : body.card_token
+                },(err, cresult)=>{
+                    if(err){
+                        console.log('/card/comment cardfind Error')
+                        res.status(403).send('/card/comment cardfind Error')
+                        throw err
+                    }
+                    else if(cresult){
+                        db.Users.findOne({
+                            token : cresult.token
+                        },(err, wresult)=>{
+                            if(err){
+                                console.log('/card/comment userfind Error')
+                                res.status(403).send('/card/comment userfind Error')
+                                throw err
+                            }
+                            else if(wresult){
+                                var comments = new db.Comment({
+                                    token : body.token,
+                                    card_token : body.card_token,
+                                    writer_profile : uresult.email,
+                                    writer : uresult.name,
+                                    date : time,
+                                    comment : body.comment
+                                })
+                                comments.save((err)=>{
+                                    if(err){
+                                        console.log('/card/comment cardsave Error')
+                                        res.status(403).send('/card/comment cardsave Error')
+                                        throw err
+                                    }
+                                    else {
+                                        var message = {
+                                            to : wresult.firebase_token,
+                                            //collapse_key : '<insert-collapse-key>',
+                                            data : comments,
+                                            notification : {
+                                                title : wresult.name+'님의 카드에'+uresult.name+'님이 댓글을 달았습니다.',
+                                                body : body.comments
+                                            }
+                                        };
+                                    }
+                                })
+
+                            }
+                        })
+                    }
+
+                })
+            }
+        })
+    })
 }

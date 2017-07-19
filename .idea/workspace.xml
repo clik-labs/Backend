@@ -6,9 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongo/database.js" afterPath="$PROJECT_DIR$/mongo/database.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/card.js" afterPath="$PROJECT_DIR$/routes/card.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/feed.js" afterPath="$PROJECT_DIR$/routes/feed.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/self.js" afterPath="$PROJECT_DIR$/routes/self.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/user.js" afterPath="$PROJECT_DIR$/routes/user.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,7 +22,7 @@
     <favorites_list name="Backend" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5148148">
+    <splitter split-orientation="horizontal" split-proportion="0.73407406">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
@@ -37,31 +35,31 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="self.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="self.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/self.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-693">
-                  <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
+                <state relative-caret-position="-3106">
+                  <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="card.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="card.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/card.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2955">
-                  <caret line="197" column="46" lean-forward="true" selection-start-line="197" selection-start-column="46" selection-end-line="197" selection-end-column="46" />
+                <state relative-caret-position="458">
+                  <caret line="294" column="26" lean-forward="false" selection-start-line="294" selection-start-column="26" selection-end-line="294" selection-end-column="26" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/routes/user.js">
+          <file leaf-file-name="facebook.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/facebook.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+                <state relative-caret-position="195">
+                  <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -81,32 +79,12 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="feed.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/routes/feed.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="490">
-                  <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="database.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mongo/database.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="215">
-                  <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+          <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/README.md">
               <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                 <state split_layout="SPLIT">
-                  <first_editor relative-caret-position="474">
-                    <caret line="483" column="0" lean-forward="true" selection-start-line="483" selection-start-column="0" selection-end-line="483" selection-end-column="0" />
+                  <first_editor relative-caret-position="5216">
+                    <caret line="397" column="19" lean-forward="true" selection-start-line="397" selection-start-column="19" selection-end-line="397" selection-end-column="19" />
                     <folding />
                   </first_editor>
                   <second_editor />
@@ -117,8 +95,18 @@
           <file leaf-file-name="data.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/data.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="651">
+                <state relative-caret-position="1005">
                   <caret line="67" column="14" lean-forward="false" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="database.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/mongo/database.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="405">
+                  <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -149,6 +137,10 @@
       <find>get</find>
       <find>/self/info</find>
       <find>/feed/sear</find>
+      <find>self/info/card</find>
+      <find>self.info.update</find>
+      <find>self/info/update</find>
+      <find>card/commnet</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -168,12 +160,12 @@
         <option value="$PROJECT_DIR$/routes/auth.js" />
         <option value="$PROJECT_DIR$/data.json" />
         <option value="&lt;28f10a45-e454-45ea-8a5a-fff3631db1a1&gt;/cliklabs_server/routes/card.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/routes/user.js" />
+        <option value="$PROJECT_DIR$/routes/feed.js" />
+        <option value="$PROJECT_DIR$/routes/self.js" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/mongo/database.js" />
         <option value="$PROJECT_DIR$/routes/card.js" />
-        <option value="$PROJECT_DIR$/routes/self.js" />
-        <option value="$PROJECT_DIR$/routes/feed.js" />
       </list>
     </option>
   </component>
@@ -373,12 +365,12 @@
       <workItem from="1500185523386" duration="2891000" />
       <workItem from="1500206371020" duration="12387000" />
       <workItem from="1500305320997" duration="40000" />
-      <workItem from="1500305380606" duration="30505000" />
+      <workItem from="1500305380606" duration="36566000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103118000" />
+    <option name="totallyTimeSpent" value="109179000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -399,9 +391,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32958034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32753327" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32753327" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.283521" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.283521" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39918116" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -700,14 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/facebook.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="44" column="18" lean-forward="true" selection-start-line="44" selection-start-column="18" selection-end-line="44" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/profile_img/3PENCv17tFktN1k.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -731,58 +715,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/auth.js">
+    <entry file="file://$PROJECT_DIR$/routes/feed.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-195">
-          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+        <state relative-caret-position="870">
+          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="27" lean-forward="true" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/card.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2955">
-          <caret line="197" column="46" lean-forward="true" selection-start-line="197" selection-start-column="46" selection-end-line="197" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/self.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-693">
-          <caret line="45" column="13" lean-forward="true" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mongo/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/feed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="58" column="0" lean-forward="false" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="67" column="14" lean-forward="false" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
+        <state relative-caret-position="480">
+          <caret line="32" column="1" lean-forward="true" selection-start-line="32" selection-start-column="1" selection-end-line="32" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -796,11 +740,59 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="474">
-            <caret line="483" column="0" lean-forward="true" selection-start-line="483" selection-start-column="0" selection-end-line="483" selection-end-column="0" />
+          <first_editor relative-caret-position="5216">
+            <caret line="397" column="19" lean-forward="true" selection-start-line="397" selection-start-column="19" selection-end-line="397" selection-end-column="19" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-195">
+          <caret line="33" column="26" lean-forward="true" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" column="14" lean-forward="false" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/self.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3106">
+          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mongo/database.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="17" lean-forward="false" selection-start-line="27" selection-start-column="17" selection-end-line="27" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/facebook.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="56" column="13" lean-forward="true" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="294" column="26" lean-forward="false" selection-start-line="294" selection-start-column="26" selection-end-line="294" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

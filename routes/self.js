@@ -79,24 +79,36 @@ function self(app, db, multer, session, port, randomstring, fs){
             }
             else{
                 db.Users.findOne({
-                    token : body.token
-                },(err, result)=>{
+                    email : body.token
+                },(err, uresult)=>{
                     if(err){
                         console.log('/self/info/update userfind Error')
-                        res.status(403).send('/self/info/update userupdate Error')
+                        res.status(403).send('/self/info/update userfind Error')
                         throw err
                     }
-                    else if(result){
-                        /* 이부분 수정해야함
-                        res.status(200).send(result)
-                        */
+                    else if(uresult){
+                        console.log(uresult.token)
+                        db.Cards.find({
+                            token : uresult.token
+                        },(err, cresult)=>{
+                            if(err){
+                                console.log('/self/info/update cardfind Error')
+                                res.status(403).send('/self/info/update cardfind Error')
+                                throw err
+                            }
+                            else if(cresult){
+                                var response = ([
+                                    uresult,cresult
+                                ])
+                                res.status(200).send(response)
+                            }
+                        })
                     }
                     else {
                         res.status(404).send('User Not Founded')
                     }
                 })
             }
-
         })
     })
 

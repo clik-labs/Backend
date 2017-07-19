@@ -12,6 +12,7 @@ var db = mongoose.connect('mongodb://localhost/cardline', (err)=>{
 mongoose.Promise = global.Promise;
 
 var CommentSchema = mongoose.Schema({
+    token : {type: String},
     card_token: {type: String},
     writer_profile: {type: String},
     writer: {type: String},
