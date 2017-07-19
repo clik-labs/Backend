@@ -478,10 +478,6 @@
         
       
       
-### 비 구현 API (7/17 구현예정)
-
-> /card/post/edit
-
-> /self/info/update
+### 비 구현 API
 
 > /feed/search
