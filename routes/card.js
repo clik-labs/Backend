@@ -288,6 +288,16 @@ function card(app, db, multer, randomstring, moment){
                                                 body : body.comments
                                             }
                                         };
+                                        fcm.send(message, (err)=>{
+                                            if(err){
+                                                res.status(403).send('fcm Error')
+                                                console.log('fcm Error')
+                                            }
+                                            else {
+                                                console.log('PUSH')
+                                                res.status(200).send('push success')
+                                            }
+                                        })
                                     }
                                 })
 

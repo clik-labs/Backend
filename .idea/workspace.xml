@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="87141dc9-b93a-44aa-85f1-f2731ea4e517" name="Default" comment="">
+    <list default="true" id="87141dc9-b93a-44aa-85f1-f2731ea4e517" name="Default" comment="k">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongo/database.js" afterPath="$PROJECT_DIR$/mongo/database.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/card.js" afterPath="$PROJECT_DIR$/routes/card.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/self.js" afterPath="$PROJECT_DIR$/routes/self.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,8 +45,8 @@
           <file leaf-file-name="card.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/card.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="458">
-                  <caret line="294" column="26" lean-forward="false" selection-start-line="294" selection-start-column="26" selection-end-line="294" selection-end-column="26" />
+                <state relative-caret-position="371">
+                  <caret line="290" column="49" lean-forward="false" selection-start-line="290" selection-start-column="49" selection-end-line="290" selection-end-column="49" />
                   <folding />
                 </state>
               </provider>
@@ -365,12 +362,12 @@
       <workItem from="1500185523386" duration="2891000" />
       <workItem from="1500206371020" duration="12387000" />
       <workItem from="1500305320997" duration="40000" />
-      <workItem from="1500305380606" duration="36566000" />
+      <workItem from="1500305380606" duration="37207000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109179000" />
+    <option name="totallyTimeSpent" value="109820000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -790,8 +787,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/card.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="294" column="26" lean-forward="false" selection-start-line="294" selection-start-column="26" selection-end-line="294" selection-end-column="26" />
+        <state relative-caret-position="371">
+          <caret line="290" column="49" lean-forward="false" selection-start-line="290" selection-start-column="49" selection-end-line="290" selection-end-column="49" />
           <folding />
         </state>
       </provider>
