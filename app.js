@@ -35,7 +35,7 @@ app.use(function (req, res, next) {
 
 require('./routes/auth')(app, db, randomstring, port)
 require('./routes/facebook')(app, db, passport, FacebookStrategy, port, randomstring)
-require('./routes/card')(app, db, multer, randomstring, moment)
+require('./routes/card')(app, db, multer, randomstring, moment, fcm)
 require('./routes/feed')(app, db)
 require('./routes/self')(app, db, multer, session, port, randomstring, fs)
 require('./routes/user')(app, db)

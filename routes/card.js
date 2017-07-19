@@ -1,6 +1,6 @@
 module.exports = card;
 
-function card(app, db, multer, randomstring, moment){
+function card(app, db, multer, randomstring, moment, fcm){
     var toomany;
     var randomArr = new Array();
     var randomKey = 0;
